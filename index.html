@@ -122,7 +122,6 @@
       <button onclick="tambah()">Penjumlahan</button>
       <button onclick="kali()">Perkalian</button>
       <button onclick="kurang()">Pengurangan</button>
-      <button onclick="bagi()">Pembagian</button>
       <button onclick="transpose()">Transpose A</button>
       <button onclick="determinan()">Determinan A</button>
       <button onclick="invers()">Invers A</button>
@@ -214,17 +213,6 @@
       var result = A.map((row, i) => row.map((val, j) => val - B[i][j]));
       showOutput("Hasil Pengurangan (A - B):\n" + formatMatrixPretty(result));
     }
-
-    function bagi() {
-      var A = parseMatrix("A"), B = parseMatrix("B");
-      if (A.length !== B.length || A[0].length !== B[0].length) {
-        return showOutput("Ukuran matriks tidak sama!");
-      }
-      var result = A.map((row, i) =>
-        row.map((val, j) => B[i][j] === 0 ? "∞" : +(val / B[i][j]).toFixed(3)));
-      showOutput("Hasil Pembagian (A ÷ B):\n" + formatMatrixPretty(result));
-    }
-
     function transpose() {
       var A = parseMatrix("A");
       var result = A[0].map((_, i) => A.map(row => row[i]));
