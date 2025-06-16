@@ -6,7 +6,7 @@
   <title>KALKULATOR MATRIKS BY SITI KHOTIJAH</title>
   <style>
     body {
-      background-image: url("gm.jpeg.jpeg");
+      background-image: url("gm.jpeg");
       background-size: 400px;
       font-family: 'Segoe UI', sans-serif;
       color: #000000;
@@ -213,6 +213,7 @@
       var result = A.map((row, i) => row.map((val, j) => val - B[i][j]));
       showOutput("Hasil Pengurangan (A - B):\n" + formatMatrixPretty(result));
     }
+
     function transpose() {
       var A = parseMatrix("A");
       var result = A[0].map((_, i) => A.map(row => row[i]));
